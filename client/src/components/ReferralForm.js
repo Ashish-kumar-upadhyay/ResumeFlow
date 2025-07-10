@@ -147,7 +147,7 @@ const ReferralForm = ({ onSuccess }) => {
       if (v) data.append(k, v);
     });
     try {
-      await axios.post('http://localhost:5000/candidates', data);
+      await axios.post('https://resumeflow-vc6r.onrender.com/candidates', data);
       setForm({ name: '', email: '', phone: '', jobTitle: '', resume: null });
       if (onSuccess) onSuccess();
     } catch (e) {

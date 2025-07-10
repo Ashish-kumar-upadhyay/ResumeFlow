@@ -194,12 +194,12 @@ const Dashboard = () => {
   }, []);
 
   const fetchCandidates = async () => {
-    const res = await axios.get('http://localhost:5000/candidates');
+    const res = await axios.get('https://resumeflow-vc6r.onrender.com/candidates');
     setCandidates(res.data);
   };
 
   const handleStatusChange = async (id, status) => {
-    await axios.put(`http://localhost:5000/candidates/${id}/status`, { status });
+    await axios.put(`https://resumeflow-vc6r.onrender.com/candidates/${id}/status`, { status });
     fetchCandidates();
   };
 
@@ -256,7 +256,7 @@ const Dashboard = () => {
                 <div><FaEnvelope style={{marginRight:4}}/> <b>Email:</b> {c.email}</div>
                 <div><FaPhone style={{marginRight:4}}/> <b>Phone:</b> {c.phone}</div>
                 {c.resumeUrl && (
-                  <ResumeLink onClick={() => setPdfUrl(`http://localhost:5000/${c.resumeUrl}`)}>
+                  <ResumeLink onClick={() => setPdfUrl(`https://resumeflow-vc6r.onrender.com/${c.resumeUrl}`)}>
                     <FaFilePdf /> View Resume
                   </ResumeLink>
                 )}
